@@ -6,13 +6,13 @@ const app = express()
 //middlewear
 app.use(express.json())
 
-// syncing models
 
-sequelize.sync({ force: true }).then(() => {
+// Syncing models
+sequelize.sync().then(() => {
     console.log("All models were synchronized successfully.");
 }).catch(error => {
-    console.log('error occur during synchronization:', error);
-})
+    console.log('Error occurred during synchronization:', error);
+});
 
 
 // get all users
